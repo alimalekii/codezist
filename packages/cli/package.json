@@ -1,0 +1,33 @@
+{
+  "name": "codezist",
+  "version": "1.0.0",
+  "description": "Codezist is an interactive place to write JavaScript code and document it together.",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": "dist/index.js",
+  "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+  },
+  "keywords": [
+    "JavaScript",
+    "Editor",
+    "document"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@codezist/local-client": "^1.0.0"
+  },
+  "devDependencies": {
+    "@codezist/local-api": "^1.0.0",
+    "commander": "^9.4.1",
+    "esbuild": "0.8.26",
+    "@types/node": "^18.11.15",
+    "typescript": "^4.9.4"
+  }
+}
